@@ -34,6 +34,31 @@ void GameSystem::PrintMap() {
 	}
 }
 
+void GameSystem::PrintMap(Board map_, int do_clear) {
+	if(do_clear)
+		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { 0,0 });
+	for (int j = 0; j < 3; j++) {
+		for (int i = 0; i < 3; i++) {
+			switch (map_[j][i]) {
+			case 0:
+				cout << "  ";
+				break;
+			case Player::player_1:
+				cout << "¡Û";
+				break;
+			case Player::player_2:
+				cout << "¡Ü";
+				break;
+			}
+		}
+		cout << endl;
+	}
+}
+
+Board* GameSystem::GetMap() {
+	return &map;
+}
+
 bool GameSystem::Place(int x, int y, Player player) {
 	if (map[y][x] != 0 || x < 0 || y < 0 || x >= 3 || y >= 3)
 		return false;
