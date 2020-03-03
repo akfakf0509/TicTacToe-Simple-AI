@@ -23,8 +23,6 @@ int main() {
 			continue;
 		}
 
-		ai1.GetMap()->insert(pair<int, Board>(key++, *gamesystem.GetMap()));
-
 		turn = !turn;
 		
 		int winner = gamesystem.CheckWinner(x, y);
@@ -36,15 +34,4 @@ int main() {
 			break;
 		}
 	}
-
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { 0,0 });
-	ai1.PrintTree();
 }
-
-/*
-0 0
-1 0
-0 1
-1 1
-0 2
-*/
