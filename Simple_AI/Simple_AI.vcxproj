@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{E58845D3-E603-4D6D-9245-6096344821D3}</ProjectGuid>
+    <ProjectGuid>{EDFDB7D5-A092-4567-B434-24BC1D30140B}</ProjectGuid>
     <RootNamespace>SimpleAI</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -124,18 +124,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AI.cpp" />
-    <ClCompile Include="Board.cpp" />
-    <ClCompile Include="GameSystem.cpp" />
+    <ClCompile Include="GameBoard.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Node.cpp" />
-    <ClCompile Include="Tree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AI.h" />
-    <ClInclude Include="Board.h" />
-    <ClInclude Include="GameSystem.h" />
-    <ClInclude Include="Node.h" />
-    <ClInclude Include="Tree.h" />
+    <ClInclude Include="GameBoard.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

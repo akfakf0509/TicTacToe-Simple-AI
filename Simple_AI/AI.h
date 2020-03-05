@@ -1,13 +1,12 @@
 #pragma once
-#include "Board.h"
-
-using namespace std;
-
+#include "GameBoard.h"
 class AI
 {
-public:	
+public:
 	AI();
 	~AI();
 
-	Vector2 Place(Board);
+	void ComputerPlace(int[3][3]);
+	int NegaMax(int[3][3], Player);
 };
+

@@ -1,36 +1,41 @@
 #include <iostream>
-#include <Windows.h>
-#include "GameSystem.h"
 #include "AI.h"
-#include "Board.h"
+#include "GameBoard.h"
 
 using namespace std;
 
 int main() {
-	GameSystem gamesystem;
+	GameBoard gameboard;
 	AI ai1;
 
-	int x, y, turn = 0, key = 0;
+	gameboard.PrintMap();
+
+	Player player = Player::player_2;
 
 	while (true)
 	{
-		gamesystem.PrintMap();
+		int x;
+		int y;
 
-		cin >> x;
-		cin >> y;
-		
-		if (!gamesystem.Place(x, y, turn ? Player::player_1 : Player::player_2)) {
-			continue;
+		if (player == Player::player_2) {
+			cin >> x;
+			cin >> y;
+
+			if (!gameboard.Place({ y, x }, player))
+				continue;
+		}
+		else if (player == Player::player_1) {
+			ai1.ComputerPlace(gameboard.GetMap());
 		}
 
-		turn = !turn;
-		
-		int winner = gamesystem.CheckWinner(x, y);
-		
-		cout << winner << endl;
+		player = player == Player::player_1 ? Player::player_2 : Player::player_1;
+
+		gameboard.PrintMap();
+
+		int winner = gameboard.isWin();
 
 		if (winner) {
-			gamesystem.PrintMap();
+			cout << "Winnder is " << winner << endl;
 			break;
 		}
 	}
