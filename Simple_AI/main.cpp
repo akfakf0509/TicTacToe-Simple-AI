@@ -25,7 +25,7 @@ int main() {
 				continue;
 		}
 		else if (player == Player::player_1) {
-			ai1.ComputerPlace(gameboard.GetMap());
+			ai1.ComputerPlace(gameboard.GetMap(),Player::player_1);
 		}
 
 		player = player == Player::player_1 ? Player::player_2 : Player::player_1;

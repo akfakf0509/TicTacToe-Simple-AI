@@ -1,6 +1,6 @@
 #pragma once
 
-typedef enum { player_1 = 100, player_2 }Player;
+typedef enum { player_1 = 1, player_2 = -1}Player;
 typedef struct { int y; int x; }Vector2;
 
 class GameBoard
